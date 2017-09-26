@@ -1,18 +1,36 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
+[![Build Status](https://travis-ci.org/zzjkf2009/PID.svg?branch=master)](https://travis-ci.org/zzjkf2009/PID)
 [![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
 ---
 
 ## Overview
 
-Simple starter C++ project with:
+This is a simple starter C++ project with:
 
 - cmake
 - googletest
 
+This template is given from https://github.com/dpiet/cpp-boilerplate
+
+In this assignment, a PID controller is designed for computing a new velocity given a target setpoint and actual velocity. 
+
+Four unit tests are created for testing the controller (class)
+## Prerequisites
+Things need to be installed in Ubuntu
+
+* Install and update cmake
+```
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
+sudo apt-get update
+sudo apt-get install cmake
+```
+* Install git
+```
+sudo apt-get install git-all
+```
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/zzjkf2009/PID
 cd <path to repository>
 mkdir build
 cd build
@@ -31,6 +49,28 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
+##  Google C++ style check (cppint) and cppcheck
+
+* cppcheck
+```
+ cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $(find . -name *.cpp |grep -vE -e "^./build/" -e "^./vendor/")
+```
+* cpplint 
+```
+ ../cpplint.py --extensions=h,hpp,cpp $( find . -name *.h -or -name *.hpp -or -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+
+```
+- cpplint result:
+![alt text](https://github.com/zzjkf2009/PID/cpplint.png)
+
+## Running and testing
+To check the result and tests
+```
+Run tests: ./test/cpp-test
+Run program: ./app/shell-app
+```
+If the four unit tests are passed, it may prove that the PID controller is designed correctly. 
+
 ## Working with Eclipse IDE ##
 
 ## Installation
@@ -39,7 +79,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/zzjkf2009/PID
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
@@ -124,3 +164,11 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+
+## Authors 
+* **David Pietrocola** -*Initial Framework*
+* **Zejiang Zeng**  -*Impletation*
+* **Tutu**         -*Partner*
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
