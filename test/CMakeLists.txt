@@ -4,7 +4,7 @@ add_executable(
     cpp-test
     main.cpp
     test.cpp
-    PID_controller.cpp
+    ../app/PID_controller.cpp
 )
 
 include_directories(
