@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/yhsueh/UMD.svg?branch=master)](https://travis-ci.org/yhsueh/UMD.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/yhsueh/UMD/badge.svg?branch=master)](https://coveralls.io/github/yhsueh/UMD?branch=master)
+[![Build Status](https://travis-ci.org/yhsueh/PID.svg?branch=master)](https://travis-ci.org/yhsueh/PID.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/yhsueh/PID/badge.svg?branch=master)](https://coveralls.io/github/yhsueh/PID?branch=master)
 ---
 
 ## Overview
