@@ -50,7 +50,7 @@ double PID_controller::Iterm(double error, double Ki, double integralSum) {
  *@return The derivative term D
  */
 double PID_controller::Dterm(double error, double prevError, double Kd) {
-  double result = (error - prevError)*Kd;
+  double result = (error - prevError)/dT*Kd;
   return result;           // Implement derivetive gain equation here
 }
 
