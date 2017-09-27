@@ -20,7 +20,8 @@ void PID_controller::PID_set(double p, double i, double d) {
 }
 
 double PID_controller::Calcu_error(double setpoint, double actual_v) {
-  return 0;              // Implement error equation
+  double result = setpoint - actual_v;
+  return result;              // Implement error equation
 }
 
 /**
@@ -29,7 +30,8 @@ double PID_controller::Calcu_error(double setpoint, double actual_v) {
  *@return [double] The proportional term P
  */
 double PID_controller::Pterm(double error, double Kp) {
-  return 0;              // Implement proportional gain equation here
+  double result = error*Kp;
+  return result;              // Implement proportional gain equation here
 }
 
 /**
@@ -38,7 +40,8 @@ double PID_controller::Pterm(double error, double Kp) {
  *@return The integral term I
  */
 double PID_controller::Iterm(double error, double Ki, double integralSum) {
-  return 0;             // Implement integral gain equation here
+  double result = (integralSum + error * dT)*Ki;
+  return result;             // Implement integral gain equation here
 }
 
 /**
@@ -47,7 +50,8 @@ double PID_controller::Iterm(double error, double Ki, double integralSum) {
  *@return The derivative term D
  */
 double PID_controller::Dterm(double error, double prevError, double Kd) {
-  return 0;           // Implement derivetive gain equation here
+  double result = (error - prevError)/dT*Kd;
+  return result;           // Implement derivetive gain equation here
 }
 
 /**
