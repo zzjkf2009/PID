@@ -40,7 +40,7 @@ double PID_controller::Pterm(double error, double Kp) {
  *@return The integral term I
  */
 double PID_controller::Iterm(double error, double Ki, double integralSum) {
-  double result = (integral + error * dT)*Ki;
+  double result = (integralSum + error * dT)*Ki;
   return result;             // Implement integral gain equation here
 }
 
